@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  luisproject:
+    container_name: luisproject
+    build: .
+    volumes:
+      - .:/app  # Mount the current directory to /app in the container
+    environment:
+      NODE_ENV: development
+    networks:
+      - playwright-net
+    ports:
+      - "9323:9323"  # Port for Playwright HTML report
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9323"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    depends_on:
+      - allure
+    
+
+  allure:
+    image: "frankescobar/allure-docker-service:2.10.0" # Use the Allure Docker image
+    user: root
+    container_name: allure
+    environment:
+      CHECK_RESULTS_EVERY_SECONDS: NONE
+      KEEP_HISTORY: 1
+    ports:
+      - "5050:5050"
+    volumes:
+      - ./reports/allure-results:/app/allure-results
+      - ./playwright-report:/app/default-reports/latest
+    restart: on-failure
+
+  allure-ui:
+    image: "frankescobar/allure-docker-service-ui"
+    container_name: allure-ui
+    environment:
+      ALLURE_DOCKER_PUBLIC_API_URL: "http://localhost:5050"
+      ALLURE_DOCKER_PUBLIC_API_URL_PREFIX: ""
+    ports:
+      - "5252:5252"    
+
+networks:
+  playwright-net:
+    driver: bridge
+
+volumes:
+  allure-results:

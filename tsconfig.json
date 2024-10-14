@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",                   // Use ESNext or ES6
+    "module": "ESNext",                   // Support for Node.js modules
+    "moduleResolution": "node",            // Node.js modules
+    "resolveJsonModule": true,
+    "esModuleInterop": true,               // Interoperability between modules
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "outDir": "./dist",                   // Output directory
+    "rootDir": "./",                       // Root directory
+    "baseUrl": "./",                       // Set base URL for relative imports
+    "paths": {
+      "core/*": ["core/*"],
+      "web/*": ["core/web/*"],
+      "ui-manager": ["core/web/ui-manager.ts"],
+      "base-page": ["core/web/base-page.ts"],
+      "search-page": ["core/web/search-page.ts"]
+    }
+  },
+  "include": ["tests/**/*.ts", "src/**/*.ts"], // Include source files as well
+  "exclude": [
+    "node_modules"
+  ]
+}
