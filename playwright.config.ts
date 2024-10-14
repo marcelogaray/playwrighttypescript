@@ -47,7 +47,10 @@ export default defineConfig({
     },
     {
       name: 'firefox-desktop',
-      use: { ...devices['Desktop Firefox'] },
+      use: { 
+        ...devices['Desktop Firefox'], 
+        viewport: { width: 1520, height: 1080 },
+      },
     },
     {
       name: 'chrome-mobile',

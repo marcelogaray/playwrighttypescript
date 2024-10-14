@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "uitest": "npx playwright test --headed",
-    "uistest:web:chrome": "npx playwright test --headed --project='chrome-desktop' --grep @desktop_chrome",
-    "uistest:web:firefox": "npx playwright test --headed --project='firefox-desktop' --grep @desktop_firefox",
-    "uitest:mobile:chrome": "npx playwright test --headed --project='chrome-mobile' --grep @mobile_chrome",
+    "uistest:web:chrome": "npx playwright test --headed --project=\"chrome-desktop\" --grep @desktop_chrome",
+    "uistest:web:firefox": "npx playwright test --headed --project=\"firefox-desktop\" --grep @desktop_firefox",
+    "uitest:mobile:chrome": "npx playwright test --headed --project=\"chrome-mobile\" --grep @mobile_chrome",
     "uistest:all": "npm-run-all --parallel uistest:web:chrome uistest:web:firefox uitest:mobile:chrome",
     "test:smoke": "npx playwright test --grep '@smoke'",
     "test:regression": "npx playwright test --grep '@regression'",
