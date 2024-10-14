@@ -1,0 +1,47 @@
+{
+  "name": "playwrighttypescript",
+  "version": "1.0.0",
+  "description": "Play with PlayWright using TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "uitest": "npx playwright test --headed",
+    "uistest:web:chrome": "npx playwright test --headed --project='chrome-desktop' --grep @desktop_chrome",
+    "uistest:web:firefox": "npx playwright test --headed --project='firefox-desktop' --grep @desktop_firefox",
+    "uitest:mobile:chrome": "npx playwright test --headed --project='chrome-mobile' --grep @mobile_chrome",
+    "uistest:all": "npm-run-all --parallel uistest:web:chrome uistest:web:firefox uitest:mobile:chrome",
+    "test:smoke": "npx playwright test --grep '@smoke'",
+    "test:regression": "npx playwright test --grep '@regression'",
+    "test:all": "npx playwright test",
+    "allure:generate": "allure generate ./allure-results --clean",
+    "allure:serve": "allure serve ./allure-results",
+    "pw:report": "npx playwright show-report",
+    "test:report": "npx playwright test --reporter=html && npx playwright show-report",
+    "test:reports": "npx playwright test --reporter=html && npx playwright show-report && allure generate ./allure-results --clean && allure serve",
+    "test:newrepo": "npx playwright test --reporter=allure && npx playwright show-report && allure generate ./allure-results --clean && allure open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcelogaray/playwrighttypescript.git"
+  },
+  "keywords": [],
+  "author": "Luis Garay <luis.marcelo.garay@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcelogaray/playwrighttypescript/issues"
+  },
+  "homepage": "https://github.com/marcelogaray/playwrighttypescript#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "@types/node": "^22.7.5",
+    "allure-playwright": "^3.0.4",
+    "npm-run-all": "^4.1.5",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.6.3",
+    "webpack": "^5.58.2",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "playwright": "^1.48.0",
+    "ts-node": "^10.9.2"
+  }
+}
