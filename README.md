@@ -25,7 +25,43 @@ User Story #3 mobile chrome execution
 ```bash
 npm run uitest:mobile:chrome
 ```
+# C. Automation Challenge – ETC (2h)
 
+## Instructions
+1. DONE - Create a public git repository for your project and push the initial setup of the project.
+2. DONE - Create a branch with name “userStory01” out of master to start working on the US #1.
+3. DONE - Use ONLY ONE test file to place all test there (like a smoke test).
+4. DONE - Once completed US#1 make sure all code is pushed to the remote repository.
+   ```txt
+   clarification:
+   using DEV as main branch
+   create PR from userStory01 to dev
+   complete PR
+   ```
+5. DONE - Create a branch with name “userStory02” out of userStory01 to start working on the US #2, remember to continue working in the same file as mentioned in step 3.
+```txt
+   clarification:
+   using DEV as main branch
+   create PR from userStory02 to dev
+   open PR
+   ```
+6. DONE - Do a PR to master from userStory02.
+
+Deliverables:
+1. DONE - Test cases generated in phase A.
+2. DONE - Test results from phase B.
+3. Bugs report and documentation from phaseB.
+```txt
+clarification:
+I created a bug report in the root 
+bug-report\durationfield.md
+all details was created there
+```
+4. Link to the git repository of automation project(remember to add a ReadMe file
+with detailed instructions about how to run your tests).
+5. Test results report from automation.
+6. Video of your test execution running.
+https://www.loom.com/share/bf53f57332364ab8b53b2f836799f7bc?sid=5fb8ba7a-a6c1-4045-9ae1-9f743efb2c7b
 
 ---
 
@@ -247,6 +283,20 @@ docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' pla
 ### 2. Accessing the Allure Report
 If you followed the standard configuration for Allure in your Docker setup, you would typically expose the Allure report on a specific port. Check your docker-compose.yml file to see which port is mapped for the Allure service. It might look something like this:
 
+
+## VSCode Install plugins: Markdown Preview Enhanced
+Name: Markdown Preview Enhanced
+Id: shd101wyy.markdown-preview-enhanced
+Description: Markdown Preview Enhanced ported to vscode
+Version: 0.8.11
+Publisher: Yiyi Wang
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced## VSCode Install plugins: Markdown Preview Enhanced
+Name: Markdown Preview Enhanced
+Id: shd101wyy.markdown-preview-enhanced
+Description: Markdown Preview Enhanced ported to vscode
+Version: 0.8.11
+Publisher: Yiyi Wang
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced
 
 ## Conclusion
 
